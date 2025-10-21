@@ -36,8 +36,17 @@
 | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/hxezu/ps-archive/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0088-merge-sorted-array](https://github.com/hxezu/ps-archive/tree/master/0088-merge-sorted-array) |
+| [0141-linked-list-cycle](https://github.com/hxezu/ps-archive/tree/master/0141-linked-list-cycle) |
 ## Sorting
 |  |
 | ------- |
 | [0088-merge-sorted-array](https://github.com/hxezu/ps-archive/tree/master/0088-merge-sorted-array) |
+## Hash Table
+|  |
+| ------- |
+| [0141-linked-list-cycle](https://github.com/hxezu/ps-archive/tree/master/0141-linked-list-cycle) |
+## Linked List
+|  |
+| ------- |
+| [0141-linked-list-cycle](https://github.com/hxezu/ps-archive/tree/master/0141-linked-list-cycle) |
 <!---LeetCode Topics End-->
