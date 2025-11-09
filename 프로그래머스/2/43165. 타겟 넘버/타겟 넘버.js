@@ -1,12 +1,12 @@
 function solution(numbers, target) {
-    let answer = 0;
+    let answer = 0
     
     function dfs(cnt, sum){
         if(cnt===numbers.length){
-            if(sum===target){
-                answer++;
+            if(sum===target) {
+                answer++
             }
-            return;
+            return
         }
         
         dfs(cnt+1, sum + numbers[cnt])
