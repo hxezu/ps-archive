@@ -7,12 +7,10 @@ let input = require("fs")
   .split("\n");
 
 const [N, M, V] = input[0].split(" ").map(Number);
-
-const edges = input.slice(1).map((line) => line.split(" ").map(Number));
 const graph = Array.from({ length: N + 1 }, () => []);
-const visited = Array(N + 1).fill(false);
 
-for (const [u, v] of edges) {
+for (let i = 1; i <= M; i++) {
+  const [u, v] = input[i].split(" ").map(Number);
   graph[u].push(v);
   graph[v].push(u);
 }
@@ -21,34 +19,38 @@ for (let i = 1; i <= N; i++) {
   graph[i].sort((a, b) => a - b);
 }
 
-let result = [];
+//dfs
+const visitedDfs = Array(N).fill(false);
+const dfsResult = [];
 function dfs(node) {
-  visited[node] = true;
-  result.push(node);
+  visitedDfs[node] = true;
+  dfsResult.push(node);
 
   for (const next of graph[node]) {
-    if (!visited[next]) {
+    if (!visitedDfs[next]) {
       dfs(next);
     }
   }
 }
 
 dfs(V);
+console.log(dfsResult.join(" "));
 
-const bfsVisited = Array(N + 1).fill(false);
-let bfsResult = [];
+//bfs
+const visitedBfs = Array(N + 1).fill(false);
+const bfsResult = [];
 
 function bfs(start) {
   const queue = [start];
-  bfsVisited[start] = true;
+  visitedBfs[start] = true;
 
   while (queue.length > 0) {
-    const node = queue.shift();
-    bfsResult.push(node);
+    const q = queue.shift();
+    bfsResult.push(q);
 
-    for (const next of graph[node]) {
-      if (!bfsVisited[next]) {
-        bfsVisited[next] = true;
+    for (const next of graph[q]) {
+      if (!visitedBfs[next]) {
+        visitedBfs[next] = true;
         queue.push(next);
       }
     }
@@ -56,5 +58,4 @@ function bfs(start) {
 }
 
 bfs(V);
-console.log(result.join(" "));
 console.log(bfsResult.join(" "));
