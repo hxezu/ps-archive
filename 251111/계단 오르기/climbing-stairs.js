@@ -12,10 +12,10 @@ function climbStairs(n){
     if(n>=3) dp[3] =1
 
     for(let i=4; i<=n; i++){
-        dp[i] = dp[i-2]+dp[i-3]
+        dp[i] = (dp[i-2]+dp[i-3])%10007
     }
 
     return dp[n]
 }
 
-console.log(climbStairs(n)%10007)
+console.log(climbStairs(n))
